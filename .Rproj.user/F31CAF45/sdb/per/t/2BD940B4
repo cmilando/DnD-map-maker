@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "map_labels <- c(\n  \"''\" = \"''\",\n  \n  \"DB\"  = 'DB',\n  \"DL\"  = 'DL',\n  \"DR\"  = 'DR',\n  \"DT\"  = 'DT',\n  \n  \"DPL\" = 'DPL',\n  \"DPR\" = 'DPR',\n  \"DPT\" = 'DPT',\n  \"DPB\" = 'DPB',\n  \n  \"DSL\" = 'DSL',\n  \"DSR\" = 'DSR',\n  \"DST\" = 'DST',\n  \"DSB\" = 'DSB',\n\n  \"F\"   = 'F',\n  \n  \"SD\"  = 'SD',\n  \"SDD\" = 'SDD',\n  \"SU\"  = 'SU',\n  \"SUU\" = 'SUU'\n)\n\nmap_colors <- c(\n  \"''\" = 'black',\n  \n  \"DB\"  = 'green',\n  \"DL\"  = 'red',\n  \"DR\"  = 'pink',\n  \"DT\"  = 'brown',\n  \n  \"DPL\" = 'yellow',\n  \"DPR\" = 'yellow',\n  \"DPT\" = 'yellow',\n  \"DPB\" = 'yellow',\n  \n  \"DSL\" = 'purple',\n  \"DSR\" = 'purple',\n  \"DST\" = 'purple',\n  \"DSB\" = 'purple',\n  \n  \"F\"   = 'white',\n  \n  \"SD\"  = 'grey',\n  \"SDD\" = 'grey',\n  \"SU\"  = 'grey',\n  \"SUU\" = 'grey'\n)",
+    "created" : 1489931708859.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1364977713",
+    "id" : "2BD940B4",
+    "lastKnownWriteTime" : 1489937542,
+    "last_content_update" : 1489937542580,
+    "path" : "C:/Users/Chad/Google Drive/Laptop/Personal/DnD/Chad notes/MapMaker/static.r",
+    "project_path" : "static.r",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

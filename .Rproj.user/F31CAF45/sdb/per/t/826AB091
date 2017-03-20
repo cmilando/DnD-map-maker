@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' give coordinates IDS\nsub_tsv <- subset(tsv_melt,! is.na(value))\nsub_tsv$value <- as.character(sub_tsv$value)\nsub_tsv$y <- -sub_tsv$y\ncoordinates(sub_tsv) <- c(\"x\",\"y\")\nsub_tsv <- sub_tsv[,c('ID','value')]\nsub_tsv <- cbind(sub_tsv, coordinates(sub_tsv))\n\n#' calculate distance matrix\ndist_tsv <- as.matrix(dist(coordinates(sub_tsv),method = 'euclidean'))\ndist_tsv[upper.tri(dist_tsv,diag = T)] <- NA\n\n#' reshape and drop blanks\ndist_tsv_melt <- melt(dist_tsv)\ncolnames(dist_tsv_melt) <- c(\"ID1\",\"ID2\",\"dist\")\ndist_tsv_melt <- apply(dist_tsv_melt,2,as.numeric)\nhead(dist_tsv_melt)\n\n#' create adjacency matrix\nadj <- subset(data.frame(dist_tsv_melt), dist == 1)\n\n#' make into graph\ng <- graph_from_data_frame(as.matrix(adj[,1:2]), directed = F, \n                           vertices = as.data.frame(sub_tsv))\nx11()\nplot(g)\n\n#' make a function for getting neighbors based on distance\nget_names <- function(g, x) unname(unlist(lapply(adjacent_vertices(g,x),names)))\n\nget_neighbors_recursive <- function(g, v, d) {\n  if(d > 0) {\n    return(list(\n      get_neighbors_recursive(g, get_names(g, v),d - 1),\n      get_names(g, v)\n    ))\n  }\n}\n\nget_neighbors <- function(g, v, d) {\n  xx <- unique(unlist(get_neighbors_recursive(g, v, d)))\n  if(d == 1) return(c(v,xx))\n  return(xx)\n}\n\nget_neighbors(g, '51',2)\nget_neighbors(g, '173',1)\nget_neighbors(g, '221',2)\n\n\n",
+    "created" : 1489949805995.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "424284873",
+    "id" : "826AB091",
+    "lastKnownWriteTime" : 1489960371,
+    "last_content_update" : 1489960371097,
+    "path" : "C:/Users/Chad/Google Drive/Laptop/Personal/DnD/Chad notes/MapMaker/test v3.R",
+    "project_path" : "test v3.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
