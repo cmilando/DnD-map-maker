@@ -20,7 +20,7 @@ plot_viewable <- function(df,v,d) {
   #' return the plot
   ggplot(data = df) + theme_bw() + 
     geom_tile(aes(x = x, y = -y,fill = value), color = 'black') +
-    geom_text(aes(x = x, y = -y, label = ID)) +
+    geom_text(aes(x = x, y = -y, label = ID),size = 2) +
     geom_point(data = pt,
                mapping = aes(x = x, y = -y), 
                shape = 23, size = 5, color = 'red', fill = 'yellow') +

@@ -10,7 +10,8 @@ library(igraph); library(maptools)
 library(spdep)
 
 #' read in the TSV file of the dungeon
-fname <- "The Dungeon of Demonic Annihilation 01 (tsv).txt"
+#fname <- "The Dungeon of Demonic Annihilation 01 (tsv).txt"
+fname <- "The Secret Labyrinth of Woe 01 (tsv) (1).txt"
 tsv <- read.csv(fname, sep = "\t", colClasses = "character")
 tsv <- rbind("",tsv)
 colnames(tsv) <- 1:ncol(tsv)
