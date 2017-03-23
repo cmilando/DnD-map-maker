@@ -4,8 +4,8 @@
 #' PURPOSE: Update the map on the fly
 #' ----------------------------------------------------------------------------
 
-ever_viewed <- c()
-ever_viewed <- tsv_melt$ID
+ever_viewed <- c()          #' if you want to start with a dark map
+ever_viewed <- tsv_melt$ID  #' if you want to see the whole map
 
 plot_viewable <- function(df,v,d) {
   
@@ -16,8 +16,10 @@ plot_viewable <- function(df,v,d) {
   #' turn off all things that are not viewable
   df$value[! (df$ID %in% ever_viewed)] <- ""
   
+  #' the point where the player is
   pt <- subset(df,ID == v)
   
+  #' return the plot
   ggplot(data = df) + theme_bw() + 
     geom_tile(aes(x = x, y = -y,fill = value), color = 'black') +
     geom_text(aes(x = x, y = -y, label = ID)) +
