@@ -6,7 +6,7 @@ To get all these packages
 `> install.packages(c('reshape2','ggplot2','igraph','maptools','spdep'))`
 
 The website where you can download the tsv (tab separated file) is
-https://donjon.bin.sh/fantasy/dungeon/
+https://donjon.bin.sh/5e/dungeon/
 
 `play.r` is the main file
 
