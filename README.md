@@ -11,3 +11,5 @@ https://donjon.bin.sh/5e/dungeon/
 `play.r` is the main file
 
 read in each line and then `plot_viewable` will update the map
+
+executing the line `x11()` will make a plot window that is movable & sizable outside of Rstudio
