@@ -26,7 +26,7 @@ tsv_melt$x <- as.numeric(tsv_melt$x)
 tsv_melt$ID <- row.names(tsv_melt)
 
 #' give coordinates IDS
-sub_tsv <- subset(tsv_melt,! is.na(value))
+sub_tsv <- subset(tsv_melt,value != "")
 sub_tsv$value <- as.character(sub_tsv$value)
 sub_tsv$y <- -sub_tsv$y
 coordinates(sub_tsv) <- c("x","y")
@@ -41,7 +41,6 @@ dist_tsv[upper.tri(dist_tsv,diag = T)] <- NA
 dist_tsv_melt <- melt(dist_tsv)
 colnames(dist_tsv_melt) <- c("ID1","ID2","dist")
 dist_tsv_melt <- apply(dist_tsv_melt,2,as.numeric)
-head(dist_tsv_melt)
 
 #' create adjacency matrix
 adj <- subset(data.frame(dist_tsv_melt), dist == 1)
