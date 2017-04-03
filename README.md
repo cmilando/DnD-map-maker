@@ -1,15 +1,21 @@
 # map-maker
 Making fog of war maps from tsv files
 
-To get all these packages
+### Setup
+Get set up with [R](https://www.r-project.org/)
 
-`> install.packages(c('reshape2','ggplot2','igraph','maptools','spdep'))`
+Fire up the R REPL:
+`R`
 
-The website where you can download the tsv (tab separated file) is
-https://donjon.bin.sh/5e/dungeon/
+````
+/* install required packages*/
+> install.packages(c('reshape2','ggplot2','igraph','maptools','spdep'))
 
-`play.r` is the main file
-
-read in each line and then `plot_viewable` will update the map
+/* load the main file */
+> source('play.r')
+````
 
 executing the line `x11()` will make a plot window that is movable & sizable outside of Rstudio
+
+### Info
+The website where you can generate example tsv files is https://donjon.bin.sh/5e/dungeon/
