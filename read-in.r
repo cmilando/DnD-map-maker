@@ -1,6 +1,6 @@
 #' ----------------------------------------------------------------------------
 #' AUTHOR: CWM
-#' DATE: 3/17/2016
+#' DATE: 3/17/2017
 #' PURPOSE: read in and make graph
 #'          Run this first
 #' ----------------------------------------------------------------------------
@@ -46,9 +46,8 @@ dist_tsv_melt <- apply(dist_tsv_melt,2,as.numeric)
 adj <- subset(data.frame(dist_tsv_melt), dist == 1)
 
 #' make into graph
-g <- graph_from_data_frame(as.matrix(adj[,1:2]), directed = F, 
+g <- graph_from_data_frame(as.matrix(adj[,1:2]), directed = F,
                            vertices = as.data.frame(sub_tsv))
 
 #' load custom functions
 source('static.r')
-
